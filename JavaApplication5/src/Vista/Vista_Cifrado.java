@@ -37,11 +37,13 @@ public class Vista_Cifrado extends javax.swing.JFrame {
         txt_texto = new javax.swing.JTextField();
         txt_Cifrado = new javax.swing.JTextField();
         btn_cifrar = new javax.swing.JButton();
-        cbox_ubi = new javax.swing.JComboBox<String>();
+        cbox_ubi = new javax.swing.JComboBox<>();
         btn_Decifrar = new javax.swing.JButton();
         btn_limpiar = new javax.swing.JButton();
         btn_copiar = new javax.swing.JButton();
         btn_copiar1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_Area = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,12 +62,7 @@ public class Vista_Cifrado extends javax.swing.JFrame {
             }
         });
 
-        cbox_ubi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25" }));
-        cbox_ubi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbox_ubiActionPerformed(evt);
-            }
-        });
+        cbox_ubi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25" }));
 
         btn_Decifrar.setText("Decifrar");
         btn_Decifrar.addActionListener(new java.awt.event.ActionListener() {
@@ -95,21 +92,26 @@ public class Vista_Cifrado extends javax.swing.JFrame {
             }
         });
 
+        txt_Area.setColumns(20);
+        txt_Area.setRows(5);
+        txt_Area.setMaximumSize(new java.awt.Dimension(10, 10));
+        jScrollPane1.setViewportView(txt_Area);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(267, Short.MAX_VALUE)
                 .addComponent(txt_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(cbox_ubi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(37, 37, 37)
+                .addComponent(cbox_ubi, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(99, 99, 99)
                         .addComponent(btn_copiar)
                         .addGap(67, 67, 67)
                         .addComponent(btn_copiar1)
@@ -118,32 +120,39 @@ public class Vista_Cifrado extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txt_Cifrado)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btn_cifrar)
                                 .addGap(45, 45, 45)
                                 .addComponent(btn_limpiar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addComponent(btn_Decifrar)))
                         .addGap(86, 86, 86))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbox_ubi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbox_ubi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_cifrar)
+                            .addComponent(btn_Decifrar)
+                            .addComponent(btn_limpiar)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cifrar)
-                    .addComponent(btn_Decifrar)
-                    .addComponent(btn_limpiar))
-                .addGap(48, 48, 48)
                 .addComponent(txt_Cifrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_copiar)
                     .addComponent(btn_copiar1))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,11 +163,11 @@ public class Vista_Cifrado extends javax.swing.JFrame {
 //        String PMayus = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 //        String PMinus = "abcdefghijklmnopqrstuvwxyz";
         //   String box = (String) cbox_ubi.getSelectedItem();
-        if (txt_texto.getText().length() != 0 && cbox_ubi.getSelectedItem().toString().length() > -1
-                && cbox_ubi.getSelectedItem().toString() != "--") {
+        if (txt_Area.getText().length() != 0 && cbox_ubi.getSelectedItem().toString().length() > -1
+                && cbox_ubi.getSelectedItem().toString() != "-----") {
 
             // mc.Cifrar(txt_texto, txt_ubi, txt_Cifrado);
-            mc.Cifrar2(txt_texto, cbox_ubi, txt_Cifrado);
+            mc.Cifrar2(txt_Area, cbox_ubi, txt_Cifrado);
 
         } else {
             JOptionPane.showMessageDialog(null, "Campos Vacios");
@@ -168,10 +177,10 @@ public class Vista_Cifrado extends javax.swing.JFrame {
 
     private void btn_DecifrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DecifrarActionPerformed
 
-        if (txt_texto.getText().length() != 0 && cbox_ubi.getSelectedItem().toString().length() > -1
-                && cbox_ubi.getSelectedItem().toString() != "--") {
+        if (txt_Area.getText().length() != 0 && cbox_ubi.getSelectedItem().toString().length() > -1
+                && cbox_ubi.getSelectedItem().toString() != "-----") {
 
-            mc.Descifrar2(txt_texto, cbox_ubi, txt_Cifrado);
+            mc.Descifrar2(txt_Area, cbox_ubi, txt_Cifrado);
 
         } else {
             JOptionPane.showMessageDialog(null, "Campos Vacios");
@@ -183,8 +192,8 @@ public class Vista_Cifrado extends javax.swing.JFrame {
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
 
-        txt_texto.setText("");
-        cbox_ubi.setSelectedItem("--");
+        txt_Area.setText("");
+        cbox_ubi.setSelectedItem("-----");
         txt_Cifrado.setText("");
 
     }//GEN-LAST:event_btn_limpiarActionPerformed
@@ -203,23 +212,19 @@ public class Vista_Cifrado extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txt_textoKeyTyped
 
-    private void cbox_ubiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbox_ubiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbox_ubiActionPerformed
-
     private void btn_copiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_copiarActionPerformed
 
         mc.copiar(txt_Cifrado.getText());
-        txt_texto.setText("");
-        cbox_ubi.setSelectedItem("--");
+        txt_Area.setText("");
+        cbox_ubi.setSelectedItem("-----");
         txt_Cifrado.setText("");
     }//GEN-LAST:event_btn_copiarActionPerformed
 
     private void btn_copiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_copiar1ActionPerformed
-        txt_texto.setText("");
-        cbox_ubi.setSelectedItem("--");
+        txt_Area.setText("");
+        cbox_ubi.setSelectedItem("-----");
         txt_Cifrado.setText("");
-        txt_texto.paste();
+        txt_Area.paste();
     }//GEN-LAST:event_btn_copiar1ActionPerformed
 
     /**
@@ -264,6 +269,8 @@ public class Vista_Cifrado extends javax.swing.JFrame {
     private javax.swing.JButton btn_copiar1;
     private javax.swing.JButton btn_limpiar;
     private javax.swing.JComboBox<String> cbox_ubi;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txt_Area;
     private javax.swing.JTextField txt_Cifrado;
     private javax.swing.JTextField txt_texto;
     // End of variables declaration//GEN-END:variables

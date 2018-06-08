@@ -11,6 +11,7 @@ import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import javax.swing.JComboBox;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -90,7 +91,7 @@ public class Metodo_Cesar implements ClipboardOwner{
     }
 
     
-    public void Cifrar2(JTextField texto, JComboBox ubi, JTextField txt_cifrado) {
+    public void Cifrar2(JTextArea texto, JComboBox ubi, JTextField txt_cifrado) {
         String Salida = "";
 
         String txt = texto.getText();
@@ -112,7 +113,7 @@ public class Metodo_Cesar implements ClipboardOwner{
         txt_cifrado.setText(Salida);
     }
     
-      public void Descifrar2(JTextField texto, JComboBox ubi, JTextField txt_cifrado) {
+      public void Descifrar2(JTextArea texto, JComboBox ubi, JTextField txt_cifrado) {
         String Salida = "";
 
          String txt = texto.getText();
