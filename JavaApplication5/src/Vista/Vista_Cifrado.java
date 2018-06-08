@@ -41,6 +41,7 @@ public class Vista_Cifrado extends javax.swing.JFrame {
         txt_ubi = new javax.swing.JTextField();
         btn_Decifrar = new javax.swing.JButton();
         btn_limpiar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +82,8 @@ public class Vista_Cifrado extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Texto");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,11 +107,17 @@ public class Vista_Cifrado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_Decifrar)
                 .addGap(86, 86, 86))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbox_ubi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,6 +236,7 @@ public class Vista_Cifrado extends javax.swing.JFrame {
     private javax.swing.JButton btn_cifrar;
     private javax.swing.JButton btn_limpiar;
     private javax.swing.JComboBox<String> cbox_ubi;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_Cifrado;
     private javax.swing.JTextField txt_texto;
     private javax.swing.JTextField txt_ubi;
