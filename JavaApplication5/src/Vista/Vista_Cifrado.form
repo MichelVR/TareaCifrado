@@ -218,6 +218,9 @@
               <Dimension value="[160, 90]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_AreaKeyTyped"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="txt_Area.setLineWrap(true);&#xa;txt_Area.setWrapStyleWord(true);"/>
           </AuxValues>

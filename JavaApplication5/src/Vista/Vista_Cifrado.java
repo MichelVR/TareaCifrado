@@ -93,6 +93,11 @@ public class Vista_Cifrado extends javax.swing.JFrame {
         txt_Area.setPreferredSize(new java.awt.Dimension(160, 90));
         txt_Area.setLineWrap(true);
         txt_Area.setWrapStyleWord(true);
+        txt_Area.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_AreaKeyTyped(evt);
+            }
+        });
         jScrollPane1.setViewportView(txt_Area);
 
         txt_Cifrado.setEditable(false);
@@ -241,6 +246,12 @@ public class Vista_Cifrado extends javax.swing.JFrame {
     private void jScrollPane1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jScrollPane1FocusLost
         
     }//GEN-LAST:event_jScrollPane1FocusLost
+
+    private void txt_AreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_AreaKeyTyped
+         char c= evt.getKeyChar();
+        
+        if((c<'a'|| c>'z')&& (c<'A'|| c>'Z'))evt.consume();
+    }//GEN-LAST:event_txt_AreaKeyTyped
     
    
     public static void main(String args[]) {
