@@ -33,65 +33,7 @@ public class Metodo_Cesar implements ClipboardOwner{
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(texto, (ClipboardOwner) this);
     }
     
-    public void Cifrar(JTextField texto, JTextField ubi, JTextField txt_cifrado) {
-        String Salida = "";
-
-        String txt = texto.getText();
-        int ubicacion = Integer.parseInt(ubi.getText());
-
-        for (int i = 0; i < txt.length(); i++) {
-
-            if ((this.PMayus.indexOf(txt.charAt(i)) != -1) || (this.PMinus.indexOf(txt.charAt(i)) != -1)) {
-
-                Salida += (this.PMayus.indexOf(txt.charAt(i)) != -1) ? this.PMayus.charAt(((this.PMayus.indexOf(txt.charAt(i))) + ubicacion) % this.PMayus.length())
-                        : this.PMinus.charAt(((this.PMinus.indexOf(txt.charAt(i))) + ubicacion) % this.PMinus.length());
-
-            } else {
-                Salida += txt.charAt(i);
-
-            }
-
-        }
-        txt_cifrado.setText(Salida);
-    }
-
-    public void Descifrar(JTextField texto, JTextField ubi, JTextField txt_cifrado) {
-        String Salida = "";
-
-         String txt = texto.getText();
-        int ubicacion = Integer.parseInt(ubi.getText());
-        
-        for (int i = 0; i < txt.length(); i++) {
-            if ((this.PMayus.indexOf(txt.charAt(i)) != -1) || (this.PMinus.indexOf(txt.charAt(i)) != -1)) {
-
-                if (this.PMayus.indexOf(txt.charAt(i)) != -1) {
-                    if ((this.PMayus.indexOf(txt.charAt(i)) - ubicacion) < 0) {
-                        Salida += this.PMayus.charAt((this.PMayus.length()) + ((this.PMayus.indexOf(txt.charAt(i))) - ubicacion));
-                    } else {
-                        Salida += this.PMayus.charAt(((this.PMayus.indexOf(txt.charAt(i))) - ubicacion) % (this.PMayus.length()));
-                    }
-                } else {
-
-                    if (this.PMinus.indexOf(txt.charAt(i)) < 0) {
-                        Salida += this.PMinus.charAt((this.PMinus.length()) + ((this.PMinus.indexOf(txt.charAt(i))) - ubicacion));
-                    } else {
-                        Salida += this.PMinus.charAt(((this.PMinus.indexOf(txt.charAt(i))) - ubicacion) % (this.PMinus.length()));
-                    }
-
-                }
-
-            } else {
-                Salida += txt.charAt(i);
-            }
-
-        }
-
-       txt_cifrado.setText(Salida);
-
-    }
-
-    
-    public void Cifrar2(JTextArea texto, JComboBox ubi, JTextField txt_cifrado) {
+    public void Cifrar2(JTextArea texto, JComboBox ubi, JTextArea txt_cifrado) {
         String Salida = "";
 
         String txt = texto.getText();
@@ -113,7 +55,7 @@ public class Metodo_Cesar implements ClipboardOwner{
         txt_cifrado.setText(Salida);
     }
     
-      public void Descifrar2(JTextArea texto, JComboBox ubi, JTextField txt_cifrado) {
+      public void Descifrar2(JTextArea texto, JComboBox ubi, JTextArea txt_cifrado) {
         String Salida = "";
 
          String txt = texto.getText();
